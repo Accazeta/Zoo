@@ -9,16 +9,17 @@ using namespace std;
 
 class Animale {
 public:
-	Animale(string nome);
-	Animale(string nome, float peso);
-	~Animale();
-	virtual void emettiSuono();
-	virtual void mangia();
 	bool affamato;
 
-private:
-	string nome_;
-	float peso_;
+	Animale(string, float);
+	virtual ~Animale();
+	virtual void emettiSuono() = 0; // metodo virtuale
+	virtual void mangia() = 0; // metodo virtuale
+
+
+protected:
+	string nome;
+	float peso;
 };
 
 

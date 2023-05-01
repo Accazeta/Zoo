@@ -12,7 +12,14 @@ public:
 	virtual ~Elefante();
 	void emettiSuono();
 	void mangia();
-
+	string getName();
+	void setName(string name);
+	float getPeso();
+	void setPeso(float peso);
+	colore getColore();
+	void setColore(colore c);
+	float getLenProb();
+	void setLenProb(float len);
 
 private:
 	float lenProboscide_;

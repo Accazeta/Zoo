@@ -14,5 +14,16 @@ Animale::~Animale() {
 	cout<<"Un Animale è morto."<<endl;
 };
 
-
+string Animale::getName() {
+	return this->nome;
+}
+void Animale::setName(string name) {
+	this->nome = name;
+}
+float Animale::getPeso() {
+	return this->peso;
+}
+void Animale::setPeso(float peso) {
+	this->peso = peso;
+}
 

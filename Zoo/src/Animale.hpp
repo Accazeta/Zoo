@@ -15,7 +15,10 @@ public:
 	virtual ~Animale();
 	virtual void emettiSuono() = 0; // metodo virtuale
 	virtual void mangia() = 0; // metodo virtuale
-
+	string getName();
+	void setName(string name);
+	float getPeso();
+	void setPeso(float peso);
 
 protected:
 	string nome;

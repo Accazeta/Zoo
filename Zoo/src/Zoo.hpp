@@ -9,15 +9,18 @@ using namespace std;
 #define ZOO_HPP_
 
 struct recinto {
+	int id;
 	string nome;
 	vector<unique_ptr<Animale>> recinto_animali;
 };
+
+static int count = 0;
 
 class Zoo {
 
 public:
 	void addRecinto(recinto r);
-	void addAnimalToRecinto(int recintoIndex, unique_ptr<Animale> daAggiungere);
+	void addAnimalToRecinto(int index, unique_ptr<Animale> daAggiungere);
 	void daiDaMangiare();
 	Zoo();
 	~Zoo();

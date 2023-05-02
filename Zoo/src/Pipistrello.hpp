@@ -11,6 +11,17 @@ public:
 	virtual ~Pipistrello();
 	void emettiSuono();
 	void mangia();
+	string getName();
+	void setName(string name);
+	float getPeso();
+	void setPeso(float peso);
+	colore getColore();
+	void setColore(colore c);
+	int getNumUova();
+	void setNumUova(int num);
+	float getPotenza();
+	void setPotenza(float pot);
+
 
 private:
 	int potenzaSonar; // in decibel

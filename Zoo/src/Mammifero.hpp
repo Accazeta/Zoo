@@ -15,10 +15,11 @@ public:
 	virtual ~Mammifero();
 	void emettiSuono();
 	void mangia();
+	void cammina();
 
 protected:
 	colore mantello;
-	void cammina();
+
 };
 
 #endif /* MAMMIFERO_HPP_ */

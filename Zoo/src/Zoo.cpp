@@ -1,24 +1,54 @@
 #include <iostream>
 #include <memory>
 #include <vector>
+#include <typeinfo> // debug
 
 #include "Zoo.hpp"
 #include "Animale.hpp"
 using namespace std;
 
-Zoo::Zoo() {}
+Zoo::Zoo() {
+}
 
-Zoo::~Zoo() {}
+Zoo::~Zoo() {
+}
 
-//void Zoo::addRecinto(recinto r) {
-//	this->recinti_.push_back(r);
-//};
+void Zoo::addRecinto(shared_ptr<recinto> r) {
+	this->recinti_.push_back(r);
+	//debug
+	cout << "Aggiunto recinto " + r.get()->nome << endl;
+}
+;
 
-//void Zoo::addAnimalToRecinto(int index, unique_ptr<Animale> daAggiungere) {
-//	// move sposta il contenuto del vettore "daAggiungere" all'interno del vettore "recinto_animali"
-//	this->recinti_[index].recinto_animali.push_back(move(daAggiungere));
-//}
+void Zoo::addAnimalToRecinto(int index, Animale *daAggiungere) {
+	this->recinti_[index].get()->animali.push_back(daAggiungere);
+}
+
+void Zoo::addAnimalToRecinto(string name, Animale *daAggiungere) {
+	int i = 0;
+
+	for (auto &rec : this->recinti_) {
+		if (rec.get()->nome == name) {
+			this->recinti_[i].get()->animali.push_back(daAggiungere);
+			// debug
+			cout
+					<< "Ho aggiunto " + daAggiungere->getName() + " di tipo "
+							+ typeid(daAggiungere).name() + " al recinto "
+							+ this->recinti_[i].get()->nome<<endl;
+			return;
+		}
+		i++;
+	}
+}
 
 void Zoo::daiDaMangiare() {
+	for (auto &rec : this->recinti_) {
+		for (auto &anim : rec.get()->animali) {
+			anim->mangia();
+		}
+	}
+}
 
+vector<shared_ptr<recinto>> Zoo::getRecinti() {
+	return this->recinti_;
 }

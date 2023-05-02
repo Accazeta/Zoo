@@ -9,25 +9,23 @@ using namespace std;
 #define ZOO_HPP_
 
 struct recinto {
-	int id;
 	string nome;
-	vector<unique_ptr<Animale>> recinto_animali;
+	vector<Animale*> animali;
 };
-
-static int count = 0;
 
 class Zoo {
 
 public:
-	void addRecinto(recinto r);
-	void addAnimalToRecinto(int index, unique_ptr<Animale> daAggiungere);
+	void addRecinto(shared_ptr<recinto> r);
+	void addAnimalToRecinto(int index, Animale* daAggiungere);
+	void addAnimalToRecinto(string name, Animale* daAggiungere);
 	void daiDaMangiare();
+	vector<shared_ptr<recinto>> getRecinti();
 	Zoo();
 	~Zoo();
 
 private:
-	vector<recinto> recinti_;
-
+	vector<shared_ptr<recinto>> recinti_;
 };
 
 #endif /* ZOO_HPP_ */

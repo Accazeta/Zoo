@@ -4,8 +4,8 @@
 using namespace std;
 
 Elefante::Elefante(string nome, float peso, colore mantello, float lenProb)
-	: Mammifero(nome, peso, mantello),
-	  Animale(nome, peso) {
+	: Animale(nome, peso), Mammifero(nome, peso, mantello)
+	   {
 	this->lenProboscide_ = lenProb;
 };
 

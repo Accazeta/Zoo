@@ -5,7 +5,7 @@ using namespace std;
 #ifndef ELEFANTE_HPP_
 #define ELEFANTE_HPP_
 
-class Elefante : private Mammifero {
+class Elefante : public Mammifero {
 public:
 
 	Elefante(string nome, float peso, colore mantello, float lenProb);

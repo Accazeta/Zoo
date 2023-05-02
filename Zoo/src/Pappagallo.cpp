@@ -40,3 +40,35 @@ void Pappagallo::ripeti() {
 	cout<<this->nome + " dice: " + input;
 
 };
+
+string Pappagallo::getName() {
+	return this->nome;
+}
+
+void Pappagallo::setName(string name) {
+	this->nome = name;
+}
+
+float Pappagallo::getPeso() {
+	return this->peso;
+}
+
+void Pappagallo::setPeso(float peso) {
+	this->peso = peso;
+}
+
+int Pappagallo::getNumUova() {
+	return this->numUova;
+}
+
+void Pappagallo::setNumUova(int num) {
+	this->numUova = num;
+}
+
+float Pappagallo::getCoeff() {
+	return this->coeffAbilita;
+}
+
+void Pappagallo::setCoeff(float coeff) {
+	this->coeffAbilita = coeff;
+}

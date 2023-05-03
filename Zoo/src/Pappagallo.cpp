@@ -6,7 +6,7 @@
 using namespace std;
 
 Pappagallo::Pappagallo(string nome, float peso, int numUova, float coeff)
-	: Volatile(nome, peso, numUova), Animale(nome, peso)
+	: Animale(nome, peso), Volatile(nome, peso, numUova)
 {
 	this->coeffAbilita = coeff;
 };
@@ -14,7 +14,7 @@ Pappagallo::Pappagallo(string nome, float peso, int numUova, float coeff)
 Pappagallo::~Pappagallo() {};
 
 void Pappagallo::emettiSuono() {
-	cout<<"Suono di un Pappagallo\n";
+	cout<<"Garrito\n";
 };
 
 void Pappagallo::mangia() {

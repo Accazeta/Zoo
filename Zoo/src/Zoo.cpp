@@ -41,14 +41,29 @@ void Zoo::addAnimalToRecinto(string name, Animale *daAggiungere) {
 	}
 }
 
-void Zoo::daiDaMangiare() {
-	for (auto &rec : this->recinti_) {
-		for (auto &anim : rec.get()->animali) {
-			anim->mangia();
-		}
-	}
-}
+
 
 vector<shared_ptr<recinto>> Zoo::getRecinti() {
 	return this->recinti_;
 }
+
+int Zoo::contaAnimali() {
+	int result = 0;
+	for(auto &rec : this->recinti_) {
+		for(auto &anim: rec.get()->animali) {
+			result++;
+		}
+	}
+	return result;
+};
+
+void Zoo::avvia() {
+
+	while(contaAnimali() > 0) {
+		for(auto &rec : this->recinti_) {
+			for(auto &anim : rec.get()->animali) {
+				anim->azione();
+			}
+		}
+	}
+};

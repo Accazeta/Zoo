@@ -19,8 +19,9 @@ public:
 	void addRecinto(shared_ptr<recinto> r);
 	void addAnimalToRecinto(int index, Animale* daAggiungere);
 	void addAnimalToRecinto(string name, Animale* daAggiungere);
-	void daiDaMangiare();
 	vector<shared_ptr<recinto>> getRecinti();
+	void avvia();
+	int contaAnimali();
 	Zoo();
 	~Zoo();
 

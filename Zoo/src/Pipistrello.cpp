@@ -1,25 +1,43 @@
 #include <iostream>
+#include <random>
 #include "Pipistrello.hpp"
 #include "Mammifero.hpp"
 #include "Volatile.hpp"
 #include "Animale.hpp"
 using namespace std;
 
-Pipistrello::Pipistrello(string nome, float peso, colore coloreMantello, int numUova, int potenza)
-	: Volatile(nome, peso, numUova), Mammifero(nome, peso, coloreMantello), Animale(nome, peso) {
+Pipistrello::Pipistrello(string nome, float peso, colore coloreMantello,
+		int numUova, int potenza) :
+		Animale(nome, peso), Volatile(nome, peso, numUova), Mammifero(nome,
+				peso, coloreMantello) {
 	this->potenzaSonar = potenza;
-};
+}
+;
 
 Pipistrello::~Pipistrello() {
-	cout<<"Un Pipistrello è morto"<<endl;
+	cout << "Un Pipistrello è morto" << endl;
 }
 
 void Pipistrello::emettiSuono() {
-	cout<<"Stridio"<<endl;
+	cout << "Stridio" << endl;
 }
 
 void Pipistrello::mangia() {
 	this->affamato = false;
+}
+
+void Pipistrello::azione() {
+	random_device rd;
+	mt19937 gen(rd());
+	uniform_real_distribution<> distribuzione(0, 100);
+	// Estraggo un numero da 0 a 100. Se minore di 50 (50% di probabilità)
+	// eseguo l'azione
+	float val = distribuzione(gen);
+	if (val < 50) {
+		return this->cammina();
+	} else {
+		return this->vola();
+	}
 }
 
 string Pipistrello::getName() {

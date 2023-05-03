@@ -11,6 +11,7 @@ public:
 	virtual ~Pipistrello();
 	void emettiSuono();
 	void mangia();
+	void azione();
 	string getName();
 	void setName(string name);
 	float getPeso();

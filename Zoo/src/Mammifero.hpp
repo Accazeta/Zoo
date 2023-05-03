@@ -15,6 +15,7 @@ public:
 	virtual ~Mammifero();
 	void emettiSuono();
 	void mangia();
+	void azione();
 	void cammina();
 
 protected:

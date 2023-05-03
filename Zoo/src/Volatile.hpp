@@ -11,6 +11,7 @@ public:
 	virtual ~Volatile();
 	void emettiSuono();
 	void mangia();
+	void azione();
 
 protected:
 	int numUova;
